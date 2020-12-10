@@ -1,0 +1,20 @@
+@import 'vendors/normalize';
+@import 'vendors/icomoon';
+@import 'vendors/custom-select';
+
+@import 'utils/variables';
+@import 'utils/grid';
+@import 'utils/breakpoints';
+
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/typography';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'pages/login';
+@import 'pages/video-upload';
+@import 'pages/start';
+@import 'pages/plenum';
+@import 'pages/tales';

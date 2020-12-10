@@ -1,0 +1,382 @@
+body.open-nav {
+    @include breakpoint(xl) {
+        overflow: hidden;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 42px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    @include breakpoint(md) {
+        padding: 22px;
+    }
+
+    .page-start & {
+        background: url("../img/bg-header.png") no-repeat center top;
+        background-size: 92% auto;
+
+        @include breakpoint(xl) {
+            background-image: url("../img/bg-header-tablet.png");
+            background-size: 100% auto;
+        }
+
+        @include breakpoint(md) {
+            background: transparent;
+        }
+
+        &.fixed {
+            background: transparent;
+        }
+    }
+
+    &-in {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo {
+    img {
+        display: block;
+
+        @include breakpoint(xl) {
+            max-width: 86px;
+        }
+
+        @include breakpoint(md) {
+            max-width: 57px;
+        }
+    }
+}
+
+.header-anchor {
+    padding-left: 67px;
+
+    @include breakpoint(xl) {
+        display: none;
+    }
+
+    .fixed & {
+        display: none;
+    }
+
+    .box-text {
+        font-size: 9px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    a {
+        position: relative;
+
+        &:before {
+            display: none;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: $orange;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+
+        &:hover {
+            &:before {
+                display: block;
+            }
+        }
+    }
+}
+
+.header-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid $white;
+    border-radius: 15px;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    position: relative;
+    z-index: 11;
+
+    @include breakpoint(xl) {
+        width: 70px;
+        height: 70px;
+        margin-right: 5px;
+    }
+
+    @include breakpoint(md) {
+        border: none;
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 30px;
+        height: 3px;
+        background: $white;
+        transition: all 0.3s;
+        position: absolute;
+        left: 9px;
+
+        @include breakpoint(xl) {
+            width: 40px;
+            height: 4px;
+            left: 14px;
+        }
+
+        @include breakpoint(md) {
+            width: 26px;
+            height: 3px;
+            left: 7px;
+        }
+    }
+
+    &:before {
+        top: 16px;
+
+        @include breakpoint(xl) {
+            top: 23px;
+        }
+
+        @include breakpoint(md) {
+            top: 13px;
+        }
+    }
+
+    &:after {
+        top: 29px;
+
+        @include breakpoint(xl) {
+            top: 41px;
+        }
+
+        @include breakpoint(md) {
+            top: 24px;
+        }
+    }
+
+    .header-nav.open-nav & {
+        border-color: transparent;
+        top: -22px;
+        right: 8px;
+
+        @include breakpoint(xl) {
+            top: 1px;
+            right: -18px;
+        }
+
+        @include breakpoint(md) {
+            top: -1px;
+            right: -5px;
+        }
+
+        &:before,
+        &:after {
+            width: 37px;
+            height: 2px;
+            background: #E2E2E2;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            top: 23px;
+            left: 5px;
+
+            @include breakpoint(xl) {
+                top: 33px;
+                left: 15px;
+            }
+
+            @include breakpoint(md) {
+                top: 19px;
+                left: 2px;
+            }
+        }
+
+        &:before {
+            -webkit-transform: rotate3d(0, 0, 1, 45deg);
+            transform: rotate3d(0, 0, 1, 45deg);
+        }
+
+        &:after {
+            -webkit-transform: rotate3d(0, 0, 1, -45deg);
+            transform: rotate3d(0, 0, 1, -45deg);
+        }
+    }
+}
+
+.navbar {
+    width: 380px;
+    position: absolute;
+    top: 32px;
+    right: -400px;
+    z-index: 10;
+    transition: all 0.3s;
+
+    @include breakpoint(xl) {
+        width: 100%;
+        height: 100%;
+        background: $white;
+        padding-top: 150px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+    }
+
+    @include breakpoint(md) {
+        padding-top: 100px;
+    }
+
+    &-in {
+        @include breakpoint(xl) {
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+
+    .header-nav.open-nav & {
+        right: 32px;
+
+        @include breakpoint(xl) {
+            right: 0;
+        }
+    }
+
+    .box-nav {
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: '';
+            border-radius: 15px;
+            transform: rotate(-180deg) skewX(-5deg);
+            position: absolute;
+            top: 0;
+            right: 15px;
+            bottom: 0;
+            left: 15px;
+            z-index: -1;
+
+            @include breakpoint-between(md, xl) {
+                transform: rotate(-180deg) skewX(-8deg);
+            }
+        }
+
+        &.work-zone {
+            padding: 95px 30px 45px 65px;
+            margin-bottom: -40px;
+
+            @include breakpoint(xl) {
+                padding: 40px 40px 55px 195px;
+                margin: 0 180px -35px -70px;
+            }
+
+            @include breakpoint(md) {
+                padding: 35px 30px 35px 100px;
+                margin: 0 4% -15px -70px;
+            }
+
+            &:before {
+                background: $gradient-green;
+                box-shadow: $shadow-revers-y;
+            }
+        }
+
+        &.fun-zone {
+            padding: 40px 30px 45px 65px;
+
+            @include breakpoint(xl) {
+                padding: 40px 110px 10px 90px;
+                margin: 0 -70px 50px 180px;
+            }
+
+            @include breakpoint(md) {
+                padding: 45px 100px 15px 50px;
+                margin: 0 -70px 40px 4%;
+            }
+
+            &:before {
+                background: $gradient-blue;
+                box-shadow: $shadow-revers-x;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+
+        @include breakpoint-between(md, xl) {
+            font-size: 32px;
+            margin: 0 0 15px 70px;
+        }
+
+        @include breakpoint(md) {
+            margin: 0 0 10px 42px;
+        }
+    }
+
+    .nav {
+        li {
+            a {
+                display: block;
+                font-size: 20px;
+                line-height: 1.4;
+                text-transform: uppercase;
+                font-weight: 400;
+                padding: 5px 0 5px 42px;
+                position: relative;
+
+                @include breakpoint-between(md, xl) {
+                    font-size: 24px;
+                    line-height: 1.66;
+                    padding: 5px 0 5px 70px;
+                }
+
+                &:before {
+                    content: '\e900';
+                    font-family: 'icomoon';
+                    font-size: 9px;
+                    font-weight: 400;
+                    color: rgba($white, 0.8);
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                    transition: all 0.3s;
+
+                    @include breakpoint-between(md, xl) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &:hover,
+            &.active {
+                a {
+                    font-weight: 700;
+                }
+            }
+
+            &:hover {
+                a {
+                    &:before {
+                        left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

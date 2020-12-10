@@ -1,0 +1,333 @@
+@for $i from 0 through 100 {
+    .box-progress progress[value="#{$i}"] {
+        & ~ .progress .progress-in { width: $i * 1% }
+    }
+}
+
+.bg-video-upload {
+    width: 100%;
+    height: 1000px;
+    background: url("../img/bg-video-upload.png") no-repeat 100px 0;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include breakpoint(xxl) {
+        background-position: 50px 0;
+    }
+
+    @include breakpoint(xl) {
+        background-position: 50% 0;
+        height: 1200px;
+    }
+}
+
+.block-video-upload {
+    padding: 150px 45px 95px;
+    margin-top: 30px;
+    position: relative;
+
+    @include breakpoint(md) {
+        padding: 150px 15px 65px;
+        margin-left: 0;
+    }
+
+    @include breakpoint(xs) {
+        padding-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .box-upload-drop {
+        display: block;
+        width: 100%;
+        max-width: 945px;
+        color: $black;
+        font-size: 21px;
+        line-height: 1.14;
+        font-weight: 400;
+        text-align: center;
+        margin: -205px auto 32px;
+        position: relative;
+        z-index: 1;
+
+        @include breakpoint(xs) {
+            font-size: 18px;
+            line-height: 1.22;
+        }
+
+        &:before {
+            content: '';
+            background: rgba($white, 0.9);
+            border-radius: 15px;
+            transform: skewX(-10deg);
+            position: absolute;
+            top: 0;
+            right: 15px;
+            bottom: 0;
+            left: 15px;
+            z-index: -1;
+        }
+
+        #fileVideo {
+            display: none;
+        }
+
+        .icon-upload {
+            display: inline-block;
+            color: $green-dark;
+            font-size: 32px;
+            margin-bottom: 15px;
+            position: relative;
+            top: 0;
+            transition: top ease 0.5s;
+
+            @include breakpoint(xs) {
+                margin-bottom: 13px;
+            }
+
+            &:hover {
+                top: -10px;
+            }
+        }
+
+        .box-upload {
+            display: block;
+            cursor: pointer;
+            padding: 40px 60px 25px;
+
+            @include breakpoint(xs) {
+                padding: 45px 30px 20px;
+            }
+        }
+
+        .box-progress {
+            display: block;
+            width: 100%;
+            max-width: 160px;
+            margin: 35px auto 0;
+
+            @include breakpoint(xs) {
+                margin-top: 20px;
+            }
+
+            progress {
+                display: none;
+            }
+
+            .progress {
+                display: block;
+                width: 100%;
+                height: 5px;
+                background: #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+
+                &-in {
+                    display: block;
+                    width: 0;
+                    height: 100%;
+                    background: $gradient-green;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: width 1s linear;
+                }
+            }
+        }
+
+        .box-upload-text {
+            display: block;
+
+            .underline {
+                color: $black;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background: $black;
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                }
+
+                &:hover {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .box-upload-info {
+        display: block;
+        width: 100%;
+        max-width: 275px;
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 700;
+        text-align: left;
+        color: $white;
+        padding: 6px 30px;
+        position: absolute;
+        top: -28px;
+        right: 0;
+        z-index: 1;
+
+        @include breakpoint(xs) {
+            top: -35px;
+        }
+
+        &:before {
+            content: '';
+            background: $gradient-green;
+            border-radius: 5px;
+            transform: skewX(-22deg) rotate(-0.53deg);
+            position: absolute;
+            top: 0;
+            right: 12px;
+            bottom: 0;
+            left: 12px;
+            z-index: -1;
+        }
+
+        &-max {
+            &:before {
+                background: $orange;
+            }
+        }
+
+        .counter {
+            font-size: 24px;
+            line-height: 0;
+        }
+    }
+
+    .box-form {
+        max-width: 736px;
+        margin: 0 auto;
+    }
+
+    .row {
+        align-items: center;
+        margin: -8px;
+    }
+
+    .form-group {
+        width: 100%;
+        padding: 8px;
+
+        &-col {
+            width: 50%;
+            padding: 8px;
+
+            @include breakpoint(md) {
+                width: 100%;
+            }
+        }
+    }
+
+    .box-textarea {
+        position: relative;
+
+        .counter {
+            font-size: 12px;
+            color: rgba($white, 0.75);
+            position: absolute;
+            right: 11px;
+            bottom: 13px;
+        }
+    }
+
+    .box-bottom {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        position: relative;
+
+        @include breakpoint(xs) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .box-checkbox {
+        flex: 1;
+    }
+
+    .box-btn {
+        margin-left: 25px;
+
+        @include breakpoint(xs) {
+            width: 100%;
+            text-align: center;
+            margin: 38px 0 0;
+        }
+    }
+
+    .btn {
+        @include breakpoint(xs) {
+            width: 100%;
+        }
+    }
+
+    .error-message {
+        width: 180px;
+        position: absolute;
+        right: 8px;
+        bottom: -20px;
+
+        @include breakpoint(xs) {
+            width: 100%;
+            bottom: -15px;
+        }
+    }
+}
+
+.block-upload-success {
+    background: url("../img/bg-upload-success.png") no-repeat center center;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 1.16;
+    padding: 80px 100px 115px;
+    position: relative;
+
+    @include breakpoint(xl) {
+        padding: 70px 80px 105px;
+    }
+
+    @include breakpoint(lg) {
+        background-image: url("../img/bg-upload-success-tablet.png");
+        line-height: 1.25;
+    }
+
+    @include breakpoint(xs) {
+        background-image: url("../img/bg-upload-success-mobile.png");
+        line-height: 1.5;
+        text-align: left;
+        padding: 65px 5% 75px;
+        margin: 0 -15px;
+    }
+
+    .heading {
+        text-align: center;
+
+        &:after {
+            background: $white;
+        }
+
+        h2 {
+            font-size: 36px;
+
+            @include breakpoint(md) {
+                font-size: 24px;
+            }
+        }
+    }
+}

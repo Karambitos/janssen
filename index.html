@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>e2e Janssen JAT21</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/app.min.css">
+</head>
+
+<body class="page-login">
+    <header class="header">
+        <a class="logo" href="/">
+            <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
+        </a>
+    </header>
+    <main class="main">
+        <div class="block-video">
+            <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="block-login">
+            <h1>Herzlich willkommen zur #JAT21!</h1>
+            <p>Bitte gib hier die Login-Daten ein, die Dir per E-Mail mit dem Absender <a href="mailto:teilnehmerverwaltung-facetoface-event@its.jnj.com">teilnehmerverwaltung-facetoface-event@its.jnj.com</a> zugesendet wurden.</p>
+            <p>Solltest Du technische Schwierigkeiten haben, wende Dich bitte an xx@yy.de oder an 0176 / xxx"</p>
+            <form class="form-login" action="/">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="box-label">
+                            <label for="username">Benutzer (Deine<br> Janssen-E-Mail-Adresse)</label>
+                            <input id="username" class="form-control" type="text" name="username" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="box-label">
+                            <label for="passwort">Passwort</label>
+                            <input id="passwort" class="form-control" type="password" name="passwort" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-btn">
+                    <div class="form-group">
+                        <button id="login" class="btn" type="submit">Login</button>
+                    </div>
+                    <div class="form-group">
+                        <div class="error-message hidden">Bitte geben Sie Ihre Zugangsdaten ein.</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-logo">
+            <a href="#" target="_blank">
+                <img src="img/Janssen_Johnson_and_Johnson-Logo.svg"
+                 alt="Janssen Pharmaceutical Companies of Johnson and Johnson Logo">
+            </a>
+        </div>
+        <div class="footer-text"><a href="#" target="_blank">Impressum</a> | <a href="#" target="_blank">Datenschutz</a> | &copy; 2021</div>
+    </footer>
+    <script src="assets/app.min.js"></script>
+</body>
+</html>

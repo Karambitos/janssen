@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>e2e Janssen JAT21</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/app.min.css">
+</head>
+
+<body>
+<header class="header">
+    <a class="logo" href="/">
+        <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
+    </a>
+    <div class="header-nav">
+        <button class="header-btn"></button>
+        <nav class="navbar">
+            <div class="navbar-in">
+                <div class="box-nav work-zone">
+                    <h3>Work Space</h3>
+                    <ul class="nav">
+                        <li><a href="#">Guided Tour durch die #JAT21 Plattform</a></li>
+                        <li class="active"><a href="#">Agenda</a></li>
+                        <li><a href="#">Digitales Plenum</a></li>
+                        <li><a href="#">Workshops</a></li>
+                        <li><a href="#">Speed-Dating</a></li>
+                        <li><a href="#">#deepdive Videos & HÖRBAR</a></li>
+                    </ul>
+                </div>
+                <div class="box-nav fun-zone">
+                    <h3>Fun Space</h3>
+                    <ul class="nav">
+                        <li><a href="#">Networking mit Kolleg:innen (Wonder)</a></li>
+                        <li><a href="#">LEGO Kino</a></li>
+                        <li><a href="#">Forum (Yammer)</a></li>
+                        <li><a href="#">Tastings</a></li>
+                        <li><a href="#">Escape Game</a></li>
+                        <li><a href="#">Spielhölle</a></li>
+                        <li><a href="#">Bunte Bühne</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main class="main">
+    <div class="block-text container">
+        <div class="heading">
+            <h1>LegoKino Upload<br class="mobile-visible"> Bereich</h1>
+        </div>
+        <p>Kurze Intro.. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+            ut labore et dolore magna aliquyam erat.Kurze Intro.. Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+    </div>
+    <div class="block-video-upload">
+        <div class="bg-video-upload"></div>
+        <form class="form-video-upload" data-id="videoUpload" action="/">
+            <label id="drop-area" class="box-upload-drop" for="fileVideo">
+                <input id="fileVideo" type="file" name="files[]" accept="video/*" required>
+                <span class="box-upload">
+                    <i class="icon-upload"></i>
+                    <span class="box-upload-text">Video hierhin ziehen,<br class="mobile-visible"> oder <span class="underline">Datei wählen</span>*</span>
+                    <span class="box-progress">
+                        <progress id="progress-bar" max=100 value=40></progress>
+                        <span class="progress"><span class="progress-in"></span></span>
+                    </span>
+                </span>
+                <span class="box-upload-info">Es können noch maximal <span class="counter">48</span> Videos eingereicht werden.</span>
+            </label>
+            <div class="box-form">
+                <div class="row">
+                    <div class="form-group-col">
+                        <input id="email" class="form-control" type="email" name="email" value="" placeholder="E-Mail*" required>
+                    </div>
+                    <div class="form-group-col">
+                        <input id="name" class="form-control" type="text" name="name" value="" placeholder="Ihr Name (Regisseur)*" required>
+                    </div>
+                    <div class="form-group-col">
+                        <input id="title" class="form-control" type="text" name="title" value="" placeholder="Titel*" required>
+                    </div>
+                    <div class="form-group-col">
+                        <select id="category" name="category" required>
+                            <option>Lorem ipsum dolor</option>
+                            <option>Sit amet</option>
+                            <option>Consectetur adipiscing elit</option>
+                            <option>Sed do eiusmod</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="box-textarea">
+                            <textarea id="description" class="form-control" name="description" cols="30" rows="10" maxlength="160" placeholder="Kurzbeschreibung*" required></textarea>
+                            <span class="counter"><span id="limitText">160</span> Zeichen</span>
+                        </div>
+                    </div>
+                    <div class="form-group box-bottom">
+                        <div class="box-checkbox" >
+                            <input id="checkbox" name="checkbox" type="checkbox">
+                            <label for="checkbox">Hiermit gebe ich die Erlaubnis, dass das Video allen Kolleg:innen auf der Plattform der Jahresauftakttagung 2021 gezeigt werden darf.</label>
+                        </div>
+                        <div class="box-btn">
+                            <button id="send" class="btn" disabled type="submit">Absenden</button>
+                            <div class="error-message">Bitte fülle alle Felder aus.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="block-popup">
+        <div class="block-popup-wrap">
+            <div class="block-popup-wrap-in">
+                <div class="block-upload-success">
+                    <div class="block-popup-close"></div>
+                    <div class="heading">
+                        <h2>Vielen Dank!</h2>
+                    </div>
+                    <p>Kurze Intro.. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat.Kurze Intro.. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer-logo">
+        <a href="#" target="_blank">
+            <img src="img/Janssen_Johnson_and_Johnson-Logo.svg"
+                 alt="Janssen Pharmaceutical Companies of Johnson and Johnson Logo">
+        </a>
+    </div>
+    <div class="footer-text"><a href="#" target="_blank">Technischer Support</a> <span class="copy">&copy; 2021</span></div>
+</footer>
+<script src="assets/app.min.js"></script>
+</body>
+</html>

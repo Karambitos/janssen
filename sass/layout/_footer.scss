@@ -1,0 +1,49 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    color: $black;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px 45px;
+
+    @include breakpoint(xl) {
+        padding: 10px 45px;
+    }
+
+    @include breakpoint(md) {
+        font-size: 12px;
+        padding: 5px 20px;
+    }
+
+    @include breakpoint(xs) {
+        font-size: 8px;
+    }
+
+    &-logo {
+        img {
+            display: block;
+
+            @include breakpoint(md) {
+                max-width: 150px;
+            }
+
+            @include breakpoint(xs) {
+                max-width: 100px;
+            }
+        }
+    }
+
+    a {
+        color: $black;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .copy {
+        padding-left: 20px;
+    }
+}

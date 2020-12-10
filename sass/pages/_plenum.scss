@@ -1,0 +1,369 @@
+.container-video-player {
+    max-width: 1323px;
+
+    @include breakpoint(xs) {
+        padding: 0;
+    }
+}
+
+.block-video-player{
+    margin-bottom: 140px;
+    position: relative;
+
+    @include breakpoint(md) {
+        margin-bottom: 120px;
+    }
+
+    .bg-video-player {
+        display: block;
+        width: 100%;
+
+        @include breakpoint(xl) {
+            display: none;
+        }
+
+        &-tablet {
+            display: none;
+            width: 100%;
+
+            @include breakpoint(xl) {
+                display: block;
+            }
+
+            @include breakpoint(xs) {
+                display: none;
+            }
+        }
+
+        &-mobile {
+            display: none;
+            width: 100%;
+
+            @include breakpoint(xs) {
+                display: block;
+            }
+        }
+    }
+}
+
+.box-video-player {
+    width: 91.565%;
+    height: 75.445%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: absolute;
+    left: 3.731%;
+    top: 4.27%;
+
+    @include breakpoint(xl) {
+        width: 91.704%;
+        height: 66.034%;
+        left: 3.555%;
+        top: 3.605%;
+    }
+
+    @include breakpoint(xs) {
+        width: 81.25%;
+        height: 51.943%;
+        left: 9.375%;
+        top: 3.18%;
+    }
+
+    .play-video-player {
+        display: flex;
+        font-size: 70px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        @include breakpoint(xl) {
+            font-size: 50px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 45px;
+        }
+    }
+
+    img {
+        display: block;
+    }
+}
+
+.info-video-player {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 32%;
+    position: absolute;
+    left: 22.303%;
+    top: 82%;
+
+    @include breakpoint(xl) {
+        max-width: 47%;
+        left: 17.037%;
+        top: 75.332%;
+    }
+
+    @include breakpoint(xs) {
+        max-width: 100%;
+        padding: 0 15px;
+        left: 0;
+        top: 63.604%;
+    }
+}
+
+.block-qr-code {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+
+    @include breakpoint(xs) {
+        padding-right: 55px;
+    }
+}
+
+.box-qr-code {
+    width: 77px;
+    flex-shrink: 0;
+
+    @include breakpoint(xl) {
+        width: 58px;
+    }
+
+    @include breakpoint(xs) {
+        width: 50px;
+    }
+
+    img {
+        display: block;
+    }
+
+    &-info {
+        font-size: 18px;
+        line-height: 100%;
+        padding-left: 15px;
+
+        @include breakpoint(xl) {
+            font-size: 16px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 13px;
+            padding-left: 10px;
+        }
+
+        @include breakpoint(xxs) {
+            font-size: 10px;
+        }
+
+        h4 {
+            margin-bottom: 7px;
+
+            @include breakpoint(xl) {
+                font-size: 16px;
+            }
+
+            @include breakpoint(xs) {
+                font-size: 13px;
+            }
+
+            @include breakpoint(xxs) {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.box-clap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 83px;
+    height: 77px;
+    border: 1px solid $white;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin-bottom: 10px;
+    position: relative;
+
+    @include breakpoint(xl) {
+        width: 65px;
+        height: 60px;
+    }
+
+    @include breakpoint(md) {
+        width: 55px;
+        height: 51px;
+    }
+
+    @include breakpoint(xs) {
+        margin-bottom: 5px;
+    }
+
+    &.active,
+    &:active {
+        color: $blue-dark;
+    }
+
+    .icon-clap {
+        font-size: 45px;
+
+        @include breakpoint(xl) {
+            font-size: 35px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 30px;
+        }
+    }
+
+    &-info {
+        position: relative;
+
+        .icon-speakers {
+            font-size: 23px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .box-speakers {
+            display: flex;
+            position: absolute;
+            top: -10px;
+            left: 0;
+
+            @include breakpoint(xl) {
+                top: -9px;
+                left: -6px;
+            }
+
+            @include breakpoint(md) {
+                top: -11px;
+                left: -11px;
+            }
+
+            @include breakpoint(xs) {
+                top: -43px;
+                left: -53px;
+            }
+
+            &.open {
+                .icon-speakers {
+                    @include breakpoint(xs) {
+                        height: 55px;
+                        background: $blue-dark;
+                        border-radius: 12px 12px 0 0;
+                    }
+
+                    &:after {
+                        content: '';
+                        background: url("../img/bg-box-speakers.png") no-repeat 0 0;
+                        width: 57px;
+                        height: 38px;
+                        position: absolute;
+                        z-index: -1;
+                        left: 0;
+                        bottom: 0;
+
+                        @include breakpoint(xs) {
+                            transform: scale(-1, 1);
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+
+                .list-speakers {
+                    display: block;
+                }
+            }
+
+            &-counter {
+                font-size: 24px;
+                line-height: 1;
+                font-weight: 300;
+                padding-left: 48px;
+
+                @include breakpoint(xl) {
+                    padding-left: 42px;
+                }
+
+                @include breakpoint(md) {
+                    font-size: 21px;
+                }
+
+                @include breakpoint(xs) {
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+
+        .list-speakers {
+            display: none;
+            background: $blue-dark;
+            border-radius: 0 12px 12px 12px;
+            padding: 10px 15px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+
+            @include breakpoint(xl) {
+                padding: 10px 20px;
+            }
+
+            @include breakpoint(xs) {
+                border-radius: 12px 0 12px 12px;
+                left: auto;
+                right: 0;
+            }
+
+            li {
+                font-size: 14px;
+                white-space: nowrap;
+                margin: 2px 0;
+                position: relative;
+                z-index: 1;
+
+                @include breakpoint(xl) {
+                    font-size: 16px;
+                }
+                
+                &.active,
+                &:hover {
+                    &:before {
+                        content: '';
+                        background: $green;
+                        border-radius: 5px;
+                        transform: skewX(-22deg);
+                        position: absolute;
+                        top: 1px;
+                        right: -8px;
+                        bottom: 0;
+                        left: -8px;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            a {
+                display: block;
+
+                @include breakpoint(xl) {
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+}

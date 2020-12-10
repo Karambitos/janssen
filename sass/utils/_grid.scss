@@ -1,0 +1,56 @@
+$columns: 12;
+$grid-spacing: 15px;
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -$grid-spacing;
+    margin-right: -$grid-spacing;
+}
+
+[class^="col-"] {
+    width: 100%;
+    padding-left: $grid-spacing;
+    padding-right: $grid-spacing;
+    position: relative;
+    min-height: 1px;
+}
+
+$grid-breakpoints: (
+    xxs: 360px,
+    xs: 480px,
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px,
+    xxl: 1440px,
+    xxxl: 1920px
+);
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($grid-breakpoints, $size)) {
+        @content;
+    }
+}
+
+@each $size, $breakpoint in $grid-breakpoints {
+    @for $i from 1 through $columns {
+        .col-#{$size}-#{$i} {
+            @include breakpoint($size) {
+                width: #{$i / $columns * 100%};
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in $grid-breakpoints {
+    @for $i from 0 through $columns {
+        .col-#{$size}-offset-#{$i} {
+            @include breakpoint($size) {
+                margin-left: #{$i / $columns * 100%};
+            }
+        }
+    }
+}

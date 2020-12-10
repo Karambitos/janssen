@@ -1,0 +1,32 @@
+$max-width: 1230px;
+
+$black: #000;
+$white: #fff;
+$gradient-blue: linear-gradient(132.04deg, #ACBDFC -19.61%, rgba(0, 6, 168, 0) -19.59%, #18F1FF -15.9%, #8BA4EA 88.55%);
+$gradient-green: linear-gradient(139.9deg, #37968A -2.51%, #377DA4 95.16%);
+$shadow-y: 0 4px 4px 0 rgba($black, 0.25);
+$shadow-revers-y: 0 -4px 4px 0 rgba($black, 0.25);
+$shadow-x: -5px 0 15px 0 rgba($black, 0.15);
+$shadow-revers-x: 5px 0 15px 0 rgba($black, 0.15);
+$gray-light: #F2F2F2;
+$orange: #F37820;
+$green: #00BB99;
+$green-dark: #378997;
+$blue: #2DE3FB;
+$blue-dark: #051A35;
+
+$link-color: $white;
+
+$base-background: url("../img/bg.png") repeat center center;
+$base-color: $white;
+$base-font-family: 'karbon', sans-serif;
+$base-font-size: 24px;
+$base-line-height: 1.33;
+$base-font-weight: 500;
+$base-letter-spacing: 0.89px;
+
+$heading-color: $white;
+$heading-font-family: 'karbon', sans-serif;
+$heading-font-weight: 700;
+$heading-second-font-weight: 500;
+$heading-line-height: 1.2;
