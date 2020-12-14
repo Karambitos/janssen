@@ -130,24 +130,6 @@
     @include breakpoint(xs) {
         position: static;
     }
-
-    .sticky-wrapper {
-        width: 93px;
-        position: absolute;
-        top: 0;
-        left: 42px;
-        z-index: 5;
-
-        @include breakpoint(xxl) {
-            left: 42px;
-            margin-left: 0;
-        }
-
-        @include breakpoint(xl) {
-            width: 82px;
-            left: 0;
-        }
-    }
 }
 
 .block-icons-space {
@@ -155,23 +137,30 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 93px;
     transform: translateY(-50%);
+    opacity: 0;
     transition: all 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 42px;
+    z-index: 5;
+
+    @include breakpoint(xl) {
+        width: 82px;
+        left: 0;
+    }
 
     @include breakpoint(xs) {
         width: 100%;
-        position: fixed;
-        left: 0;
+        transform: translateY(0);
+        top: auto;
         bottom: 0;
         z-index: 5;
-
-        &.sticky {
-            opacity: 1;
-        }
     }
 
-    .is-sticky & {
-        top: 50% !important;
+    &.sticky {
+        opacity: 1;
     }
 
     .box-logo {
@@ -191,7 +180,6 @@
         background: rgba($white, 0.05);
         border-radius: 25px;
         padding: 10px 18px 0;
-        opacity: 0;
 
         @include breakpoint(xs) {
             width: 100%;
@@ -201,10 +189,6 @@
             background: rgba(5,26,53, 0.25);
             border-radius: 0;
             padding: 6px 15px;
-        }
-
-        .is-sticky & {
-            opacity: 1;
         }
 
         .box-in {
@@ -378,6 +362,7 @@
 
 .box-video {
     display: block;
+    height: 100%;
     background: $gradient-green;
     box-shadow: $shadow-y;
     border-radius: 15px;
@@ -883,6 +868,8 @@
         }
 
         &:hover {
+            box-shadow: 0 0 10px 0 rgba($black, 0.5);
+
             .icon-arrow-right {
                 padding-left: 25px;
             }

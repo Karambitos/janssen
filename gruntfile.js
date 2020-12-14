@@ -27,7 +27,9 @@ module.exports = function(grunt) {
                     'assets/app.min.js': [
                         'js/jquery.min.js',
                         'js/libs/**/*.js',
-                        'js/functions.js'
+                        'js/functions.js',
+                        'js/sound.js',
+                        'js/speed-dating.js',
                     ]
                 }
             }

@@ -257,7 +257,7 @@
                 left: -53px;
             }
 
-            &.open {
+            &:hover {
                 .icon-speakers {
                     @include breakpoint(xs) {
                         height: 55px;
@@ -285,6 +285,10 @@
 
                 .list-speakers {
                     display: block;
+                    
+                    li{
+                        cursor: pointer;
+                    }
                 }
             }
 

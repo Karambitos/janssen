@@ -28,8 +28,6 @@ $(document).ready(function() {
         }
     });
 
-
-
     // Label placeholder
 
     $(".box-label label").inFieldLabels({
@@ -143,56 +141,101 @@ $(document).ready(function() {
 
     // Sticky block icons
 
-    if ($(window).width() > 480) {
-        $(".block-icons-space").sticky({
-            topSpacing: 0
-        });
+    function checkOffset() {
+        if($('.block-icons-space').offset().top + $('.block-icons-space').height()
+            >= $('.footer').offset().top - 10)
+            $('.block-icons-space').css('position', 'absolute');
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top)
+            $('.block-icons-space').css('position', 'fixed');
     }
 
-    if ($(window).width() <= 480) {
-        function checkOffset() {
-            if($('.block-icons-space').offset().top + $('.block-icons-space').height()
-                >= $('.footer').offset().top - 10)
-                $('.block-icons-space').css('position', 'absolute');
-            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top)
-                $('.block-icons-space').css('position', 'fixed');
+    $(document).scroll(function() {
+        checkOffset();
+
+        var scroll = $(this).scrollTop() + $(window).height() - 100;
+        var scrollWrap = $('.block-space').offset().top;
+        if (scroll > scrollWrap) {
+            $('.block-icons-space').addClass('sticky');
+        } else {
+            $('.block-icons-space').removeClass('sticky');
+        }
+    });
+
+    // $('.box-icons-space .box-icon').on('click', function(){
+    //     function random(max){
+    //         return Math.random() * (max - 0) + 0;
+    //     }
+    //     var c = document.createDocumentFragment();
+    //     for (var i=0; i<100; i++) {
+    //         var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);\
+    //               background: hsla('+random(360)+',100%,50%,1);\
+    //               animation: bang 700ms ease-out forwards;\
+    //               opacity: 0';
+    //
+    //         var e = document.createElement("i");
+    //         e.style.cssText = styles.toString();
+    //         c.appendChild(e);
+    //     }
+    //     // document.body.appendChild(c);
+    //     $(this).append(c);
+    // });
+
+    $(".js-btn").on("click", function (event) {
+        let divBoxIn = event.currentTarget;
+        let attribute = divBoxIn.getAttribute("data-image");
+        let iteration = 70;
+
+        let src = "./img/icon/flack-e.png";
+        if (attribute === "heart" || attribute === "ja") {
+            if (attribute === "heart") {
+                iteration = 100;
+                src = "./img/icon/heart.svg";
+            } else {
+                iteration = 100;
+                src = "./img/icon/ja.svg";
+            }
         }
 
-        $(document).scroll(function() {
-            checkOffset();
+        function random1(min, max) {
+            return Math.random() * (max - min + 1) + min;
+        }
 
-            var scroll = $(this).scrollTop() + $(window).height() - 100;
-            var scrollWrap = $('.block-space').offset().top;
-            if (scroll > scrollWrap) {
-                $('.block-icons-space').addClass('sticky');
-            } else {
-                $('.block-icons-space').removeClass('sticky');
-            }
-        });
-    }
-
-    $('.box-icons-space .box-icon').on('click', function(){
-        function random(max){
+        divBoxIn.childNodes[1].textContent =
+          +divBoxIn.childNodes[1].textContent + 1;
+        function random(max) {
             return Math.random() * (max - 0) + 0;
         }
-
         var c = document.createDocumentFragment();
-        for (var i=0; i<100; i++) {
-            var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);\
-                  background: hsla('+random(360)+',100%,50%,1);\
-                  animation: bang 700ms ease-out forwards;\
-                  opacity: 0';
 
-            var e = document.createElement("i");
+        for (var i = 0; i < iteration; i++) {
+            var styles =
+              "transform: translate3d(" +
+              random(4008) +
+              "px, " +
+              random1(-9000, 1000) +
+              "px, " +
+              random(6999) +
+              "px) rotate(" +
+              random(360) +
+              "deg);\
+                     \
+                          animation: bang 2000ms ease forwards;\
+                          opacity: 0;\
+                          position: absolute";
+
+            var e = document.createElement("img");
+            e.setAttribute("src", src);
+            //   console.log(e);
             e.style.cssText = styles.toString();
+
             c.appendChild(e);
         }
+
         // document.body.appendChild(c);
         $(this).append(c);
     });
 
     // Scroll background animation
-
     function scrollBg() {
         var $body = jQuery('body');
         var scrollTop = $(window).scrollTop();
@@ -205,11 +248,9 @@ $(document).ready(function() {
     }
 
     // List sounds
-
     $(".icon-speakers").click(function() {
         $(this).parent().toggleClass("open");
     });
-
     $(document).on("click", function(event){
         var $trigger = $(".box-clap-info");
         if($trigger !== event.target && !$trigger.has(event.target).length){

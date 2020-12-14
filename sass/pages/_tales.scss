@@ -1,4 +1,256 @@
-.block-tales {
-    width: 100%;
+body.page-has-icons {
+    .main {
+        padding: 0 100px;
 
+        @include breakpoint(xl) {
+            padding: 0;
+        }
+    }
+    .box-info {
+        .btn {
+            position: absolute;
+        }
+    }
+}
+
+.block-tales {
+    padding-bottom: 70px;
+
+    .row {
+        margin: -22px -18px;
+
+        @include breakpoint(xxl) {
+            margin: -15px;
+        }
+        
+    }
+
+    [class^="col-"] {
+        padding: 22px 18px;
+
+        @include breakpoint(xxl) {
+            padding: 15px;
+        }
+    }
+}
+
+.box-tale {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    .box-img {
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .box-info {
+        flex: 1;
+        background: url("../img/bg-box-tale.png") no-repeat center top;
+        background-size: 100% 100%;
+        border-radius: 0 0 15px 15px;
+        padding: 100px 25px 110px 35px;
+        margin-top: -200px;
+        position: relative;
+        z-index: 1;
+
+        @include breakpoint(xl) {
+            padding: 100px 25px 90px;
+        }
+    }
+
+    h3 {
+        max-width: 60%;
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+
+        @include breakpoint(xxl) {
+            max-width: 80%;
+        }
+
+        @include breakpoint(xs) {
+            max-width: 90%;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    .btn {
+        height: 60px;
+        justify-content: space-between;
+        border-radius: 5px;
+        font-size: 16px;
+        line-height: 1.12;
+        font-weight: 500;
+        text-align: left;
+        overflow: hidden;
+        padding: 10px 20px;
+        position: absolute;
+        left: 35px;
+        right: 25px;
+        bottom: 30px;
+
+        @include breakpoint(xl) {
+            height: 45px;
+            font-size: 12px;
+            padding: 5px 15px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        }
+
+        @include breakpoint(md) {
+            padding: 5px 10px;
+        }
+
+        @include breakpoint(xs) {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .btn-text{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 4;
+
+            &.active{
+                transform: translateX(-100%);
+            }
+        }
+
+        &-inactive {
+            background: $green-dark;
+            border: 1px solid $white;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+
+        &-in {
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 30px;
+                padding-right: 20px;
+
+                @include breakpoint(xl) {
+                    padding-right: 15px;
+                }
+
+                @include breakpoint(md) {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        .icon-clock {
+            font-size: 20px;
+        }
+
+        .icon-arrow-right {
+            font-size: 10px;
+            padding-left: 20px;
+
+            @include breakpoint(xl) {
+                font-size: 7px;
+                padding-left: 15px;
+            }
+
+            @include breakpoint(md) {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .mejs__mediaelement,
+    .mejs__controls:not([style*="display: none"]) {
+        background: $green;
+        padding: 0;
+
+    }
+
+    .mejs__time,
+    .mejs__volume-button,
+    .mejs__horizontal-volume-slider {
+        display: none;
+    }
+
+    .mejs__time-rail {
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        margin-left: 28px;
+        margin-right: 0;
+    }
+
+    .mejs__time-buffering,
+    .mejs__time-current,
+    .mejs__time-float,
+    .mejs__time-float-corner,
+    .mejs__time-float-current,
+    .mejs__time-hovered,
+    .mejs__time-loaded,
+    .mejs__time-marker,
+    .mejs__time-total {
+        height: 3px;
+        margin: 0;
+        background: $white;
+    }
+
+    .mejs__time-float {
+        display: none;
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .mejs__time-rail .mejs__time-handle-content {
+        transform: scale(1);
+        top: -10px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .mejs__button>button {
+        position: relative;
+        overflow: inherit;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -5px;
+            display: block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    .mejs__play>button {
+        background-position: 1px 0;
+    }
+
+    .mejs__replay>button {
+        background-position: -160px -1px;
+    }
 }

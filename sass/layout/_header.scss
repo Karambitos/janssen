@@ -9,14 +9,14 @@ body.open-nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 42px;
+    padding: 42px 42px 0;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 100;
 
     @include breakpoint(md) {
-        padding: 22px;
+        padding: 22px 22px 0;
     }
 
     .page-start & {
@@ -59,13 +59,15 @@ body.open-nav {
 
 .header-anchor {
     padding-left: 67px;
+    transition: all 0.3s;
 
     @include breakpoint(xl) {
         display: none;
     }
 
     .fixed & {
-        display: none;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .box-text {

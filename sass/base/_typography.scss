@@ -93,7 +93,8 @@ h6 {
     }
 }
 
-h1 {
+h1,
+.h1{
     font-size: 36px;
 
     @include breakpoint(md) {
@@ -186,8 +187,14 @@ main {
 
 .block-text {
     text-align: center;
-    padding-top: 80px;
+    padding-top: 90px;
     padding-bottom: 80px;
+    
+    h1,
+    .h1{
+        margin: auto;
+        max-width: 780px;
+    }
 
     @include breakpoint(xl) {
         padding-top: 140px;
@@ -236,12 +243,15 @@ main {
     &:focus {
         background: $white;
         color: $green;
+        a{
+            color: $green;
+        }
     }
 
     &:disabled,
     &.disabled {
         pointer-events: none;
-        background: rgba($green, 0.5);
+        opacity: 0.5;
     }
 
     &.white {

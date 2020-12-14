@@ -11,19 +11,18 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/app.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css"/>
 </head>
 
-<body class="page-horbar">
+<style>
+
+</style>
+
+<body class="page-horbar page-has-icons">
 <header class="header">
-    <div class="header-in">
-        <a class="logo" href="/">
-            <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
-        </a>
-        <div class="header-anchor">
-            <div class="box-text">Go to:</div>
-            <a href="#work-zone">#Work Zone</a> / <a href="#fun-zone">#Fun-Zone</a>
-        </div>
-    </div>
+    <a class="logo" href="/">
+        <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
+    </a>
     <div class="header-nav">
         <button class="header-btn"></button>
         <nav class="navbar">
@@ -66,96 +65,104 @@
         <div class="container">
             <div class="block-icons-space">
                 <div class="box-icons-space">
-                    <div class="box-in">
-                        <div class="box-num">55</div>
+                    <div data-image="heart" class="box-in js-btn">
+                        <div class="box-num">0</div>
                         <div class="box-icon">
-                            <img src="img/icon/heart.svg" alt="">
+                            <img src="img/icon/heart.svg" alt="" />
                         </div>
                     </div>
-                    <div class="box-in">
-                        <div class="box-num">55</div>
+                    <div data-image="ja" class="box-in js-btn">
+                        <div class="box-num">0</div>
                         <div class="box-icon">
-                            <img src="img/icon/ja.svg" alt="">
+                            <img src="img/icon/ja.svg" alt="" />
                         </div>
                     </div>
-                    <div class="box-in">
-                        <div class="box-num">55</div>
+                    <div data-image="confetti" class="box-in js-btn">
+                        <div class="box-num">0</div>
                         <div class="box-icon">
-                            <img src="img/icon/confetti.svg" alt="">
+                            <img src="img/icon/confetti.svg" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <a class="box-tale" href="#">
+                    <div class="box-tale">
                         <div class="box-img">
-                            <img src="img/img-video.png" alt="">
+                            <img src="img/img-tale.png" alt="">
                         </div>
                         <div class="box-info">
                             <h3>Achtsamkeit (Keynote) "Working in the zone"</h3>
                             <p>Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.</p>
-                            <div class="btn">
+                            <a class="btn" href="#">
                                 <div class="btn-in">
                                     <i class="icon-play-small"></i>
                                     Video ansehen
                                 </div>
                                 <i class="icon-arrow-right"></i>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <a class="box-tale" href="#">
+                    <div class="box-tale">
                         <div class="box-img">
-                            <img src="img/img-video.png" alt="">
+                            <img src="img/img-tale.png" alt="">
                         </div>
                         <div class="box-info">
                             <h3>Achtsamkeit (Keynote) "Working in the zone"</h3>
                             <p>Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.</p>
-                            <div class="btn">
-                                <div class="btn-in">
-                                    <i class="icon-sound"></i>
-                                    Podcast anhören
+                            <div class="btn audio-box">
+                                <div class="btn btn-text">
+                                    <div class="btn-in">
+                                        <i class="icon-sound"></i>
+                                        Podcast anhören
+                                    </div>
+                                    <i class="icon-arrow-right"></i>
                                 </div>
-                                <i class="icon-arrow-right"></i>
+                                <audio preload="none" controls src="./sound/file_example_MP3_700KB.mp3"></audio>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <a class="box-tale" href="#">
+                    <div class="box-tale">
                         <div class="box-img">
-                            <img src="img/img-video.png" alt="">
+                            <img src="img/img-tale.png" alt="">
                         </div>
                         <div class="box-info">
                             <h3>Achtsamkeit (Keynote) "Working in the zone"</h3>
                             <p>Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.</p>
-                            <div class="btn">
+                            <a class="btn" href="#" target="_blank">
                                 <div class="btn-in">
                                     <i class="icon-file"></i>
                                     Datei ansehen
                                 </div>
                                 <i class="icon-arrow-right"></i>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <a class="box-tale" href="#">
+                    <div class="box-tale">
                         <div class="box-img">
-                            <img src="img/img-video.png" alt="">
+                            <img src="img/img-tale.png" alt="">
                         </div>
                         <div class="box-info">
                             <h3>Achtsamkeit (Keynote) "Working in the zone"</h3>
                             <p>Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.</p>
-                            <div class="btn">
-                                <div class="btn-in">
-                                    <i class="icon-pause"></i>
+                            <div class="btn audio-box">
+                                <div class="btn btn-text">
+                                    <div class="btn-in">
+                                        <i class="icon-sound"></i>
+                                        Podcast anhören
+                                    </div>
+                                    <i class="icon-arrow-right"></i>
                                 </div>
+                                <audio preload="none" controls src="https://web.opendrive.com/api/v1/download/file.json/OV84MDUyNTM1NF9aSXB6Sw?inline=1"></audio>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,5 +178,9 @@
     <div class="footer-text"><a href="#" target="_blank">Technischer Support</a> <span class="copy">&copy; 2021</span></div>
 </footer>
 <script src="assets/app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+<script>
+  $('audio').mediaelementplayer();
+</script>
 </body>
 </html>

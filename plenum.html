@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/app.min.css">
 </head>
 
-<body>
+<body class="page-plenum">
 <header class="header">
     <a class="logo" href="/">
         <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
@@ -83,17 +83,18 @@
                         <div class="box-speakers">
                             <i class="icon-speakers"></i>
                             <ul class="list-speakers">
-                                <li><a href="#">Sound-1</a></li>
-                                <li><a href="#">Sound-2</a></li>
-                                <li class="active"><a href="#">Sound-3 very long</a></li>
+                                <li data-id="1">Sound-1</li>
+                                <li data-id="2">Sound-2</li>
+                                <li data-id="3" class="active">Sound-3 very long</li>
                             </ul>
                         </div>
                         <div class="box-speakers-counter">54</div>
+                        <audio id="music" preload="none" src="./sound/clap.mp3"></audio>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </main>
 <footer class="footer">
     <div class="footer-logo">
