@@ -24,6 +24,13 @@ body {
     @include breakpoint(lg) {
         font-size: 16px;
     }
+    
+    .days,
+    .days-colon,
+    .hours,
+    .hours-colon{
+        display: none;
+    }
 }
 
 *,
@@ -243,7 +250,8 @@ main {
     &:focus {
         background: $white;
         color: $green;
-        a{
+        
+        a {
             color: $green;
         }
     }
@@ -511,7 +519,7 @@ textarea.form-control {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 99;
+    z-index: 999;
 
     &-wrap {
         display: table;
@@ -539,6 +547,7 @@ textarea.form-control {
         width: 30px;
         height: 30px;
         cursor: pointer;
+        transition: all 0.3s;
         position: absolute;
         top: 15px;
         right: 40px;
@@ -574,6 +583,10 @@ textarea.form-control {
         &:after {
             -webkit-transform: rotate3d(0, 0, 1, -45deg);
             transform: rotate3d(0, 0, 1, -45deg);
+        }
+
+        &:hover {
+            transform: rotate(180deg);
         }
     }
 }

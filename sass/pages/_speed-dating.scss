@@ -77,6 +77,12 @@
                         margin: 0 20px 0 auto;
                         width: 82%;
                     }
+
+                    &.disabled {
+                        opacity: 1;
+                        background: #00a39a;
+                        color: #7bd8d5;
+                    }
                 }
                 
                 .custom-checkbox {
@@ -92,6 +98,7 @@
                     font-weight: 700;
                     font-size: 18px;
                     line-height: 28px;
+                    cursor: pointer;
                     letter-spacing: 0.892837px;
                     margin: 0 auto 28px 35%;
                     
@@ -123,16 +130,6 @@
     }
     .container-video-player{
         display: none;
-        
-        .box-video-player{
-            width: 92%;
-            height: 100%;
-            
-            @include breakpoint(xs) {
-                left: 5%;
-                
-            }
-        }
     }
     
     .box-timer-info{

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/app.min.css">
 </head>
 
-<body class="page-plenum">
+<body>
 <header class="header">
     <a class="logo" href="/">
         <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
@@ -58,12 +58,14 @@
     </div>
     <div class="container-video-player container">
         <div class="block-video-player">
-            <img class="bg-video-player" src="img/bg-video-player.png" alt="">
-            <img class="bg-video-player-tablet" src="img/bg-video-player-tablet.png" alt="">
-            <img class="bg-video-player-mobile" src="img/bg-video-player-mobile.png" alt="">
-            <div class="box-video-player">
-                <a class="play-video-player" href="#"><i class="icon-play"></i></a>
-                <img src="img/img-video-player.png" alt="">
+            <div class="wrap-video-player">
+                <img class="bg-video-player" src="img/bg-video-player.png" alt="">
+                <img class="bg-video-player-tablet" src="img/bg-video-player-tablet.png" alt="">
+                <img class="bg-video-player-mobile" src="img/bg-video-player-mobile.png" alt="">
+                <div class="box-video-player">
+                    <a class="play-video-player" href="#"><i class="icon-play"></i></a>
+                    <img src="img/img-video-player.png" alt="">
+                </div>
             </div>
             <div class="info-video-player">
                 <div class="block-qr-code">
@@ -87,14 +89,14 @@
                                 <li data-id="2">Sound-2</li>
                                 <li data-id="3" class="active">Sound-3 very long</li>
                             </ul>
+                            <audio class="musicPlayer" preload="none" src="./sound/clap.mp3"></audio>
                         </div>
                         <div class="box-speakers-counter">54</div>
-                        <audio id="music" preload="none" src="./sound/clap.mp3"></audio>
-                    </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </main>
 <footer class="footer">
     <div class="footer-logo">

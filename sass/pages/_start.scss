@@ -163,6 +163,11 @@
         opacity: 1;
     }
 
+    &.popup-open {
+        opacity: 1;
+        z-index: 1000;
+    }
+
     .box-logo {
         margin-bottom: 40px;
 
@@ -186,9 +191,13 @@
             display: flex;
             justify-content: center;
             flex-direction: row-reverse;
-            background: rgba(5,26,53, 0.25);
+            background: rgba($blue-dark, 0.95);
             border-radius: 0;
             padding: 6px 15px;
+
+            .page-start & {
+                background: rgba(5,26,53, 0.25);
+            }
         }
 
         .box-in {
@@ -445,7 +454,7 @@
             line-height: 1.25;
         }
 
-        @include breakpoint(xl) {
+        @include breakpoint(xs) {
             min-height: 72px;
         }
     }
@@ -693,7 +702,10 @@
 
             @include breakpoint(xs) {
                 min-height: 320px;
-                padding-top: 50px;
+
+                .box-link {
+                    padding-top: 90px;
+                }
             }
         }
 
@@ -844,7 +856,9 @@
             }
 
             @include breakpoint(xs) {
-                padding-bottom: 50px;
+                .box-link {
+                    padding-bottom: 90px;
+                }
             }
         }
     }

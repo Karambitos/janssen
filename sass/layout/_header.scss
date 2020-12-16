@@ -46,6 +46,7 @@ body.open-nav {
 .logo {
     img {
         display: block;
+        position: relative;
 
         @include breakpoint(xl) {
             max-width: 86px;

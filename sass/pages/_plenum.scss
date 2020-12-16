@@ -1,18 +1,44 @@
 .container-video-player {
     max-width: 1323px;
+    margin-bottom: 110px;
 
-    @include breakpoint(xs) {
-        padding: 0;
+    @include breakpoint(md) {
+        margin-bottom: 90px;
     }
 }
 
 .block-video-player{
-    margin-bottom: 140px;
     position: relative;
 
-    @include breakpoint(md) {
-        margin-bottom: 120px;
+    &:before {
+        content: '';
+        background: url("../img/bg-info-video-player.png") no-repeat left bottom;
+        background-size: 100% auto;
+        width: 70%;
+        height: 90%;
+        position: absolute;
+        z-index: -1;
+        left: 13.765%;
+        bottom: 0;
+
+        @include breakpoint(xl) {
+            background-image: url("../img/bg-info-video-player-tablet.png");
+            width: 90%;
+            left: 4.765%;
+        }
+
+        @include breakpoint(xs) {
+            background-image: url("../img/bg-info-video-player-mobile.png");
+            width: auto;
+            height: 120%;
+            left: -30px;
+            right: -100px;
+        }
     }
+}
+
+.wrap-video-player {
+    position: relative;
 
     .bg-video-player {
         display: block;
@@ -47,27 +73,13 @@
 }
 
 .box-video-player {
-    width: 91.565%;
-    height: 75.445%;
+    width: 91.498%;
+    height: 89.436%;
     border-radius: 15px;
     overflow: hidden;
     position: absolute;
-    left: 3.731%;
-    top: 4.27%;
-
-    @include breakpoint(xl) {
-        width: 91.704%;
-        height: 66.034%;
-        left: 3.555%;
-        top: 3.605%;
-    }
-
-    @include breakpoint(xs) {
-        width: 81.25%;
-        height: 51.943%;
-        left: 9.375%;
-        top: 3.18%;
-    }
+    left: 3.725%;
+    top: 5.352%;
 
     .play-video-player {
         display: flex;
@@ -96,23 +108,27 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
-    max-width: 32%;
-    position: absolute;
-    left: 22.303%;
-    top: 82%;
+    max-width: 385px;
+    padding-bottom: 30px;
+    margin: -10px 0 0 22.265%;
 
     @include breakpoint(xl) {
-        max-width: 47%;
-        left: 17.037%;
-        top: 75.332%;
+        padding-bottom: 35px;
+        margin: 10px 0 0 17.265%;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 46%;
     }
 
     @include breakpoint(xs) {
-        max-width: 100%;
-        padding: 0 15px;
-        left: 0;
-        top: 63.604%;
+        max-width: 300px;
+        padding-bottom: 30px;
+        margin: 15px auto 0;
+    }
+
+    .mejs__audio {
+        display: none;
     }
 }
 
@@ -342,6 +358,7 @@
 
                 @include breakpoint(xl) {
                     font-size: 16px;
+                    padding: 3px 0;
                 }
                 
                 &.active,
@@ -358,14 +375,6 @@
                         left: -8px;
                         z-index: -1;
                     }
-                }
-            }
-
-            a {
-                display: block;
-
-                @include breakpoint(xl) {
-                    padding: 3px 0;
                 }
             }
         }

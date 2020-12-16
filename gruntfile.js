@@ -30,6 +30,7 @@ module.exports = function(grunt) {
                         'js/functions.js',
                         'js/sound.js',
                         'js/speed-dating.js',
+                        'js/timer.js',
                     ]
                 }
             }

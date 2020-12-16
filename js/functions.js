@@ -115,9 +115,17 @@ $(document).ready(function() {
         $("body").removeClass("block-popup-lock");
     }
 
+    $(".btn-popup").click(function() {
+        event.preventDefault();
+        $(this).parent().parent().next(".block-popup").show();
+        $("body").addClass("block-popup-lock");
+        $(".block-icons-space").addClass("popup-open");
+    });
+
     $(".block-popup-close").click(function() {
         $(this).closest(".block-popup").hide();
         $("body").removeClass("block-popup-lock");
+        $(".block-icons-space").removeClass("popup-open");
     });
 
     // Start video parallax
@@ -160,25 +168,6 @@ $(document).ready(function() {
             $('.block-icons-space').removeClass('sticky');
         }
     });
-
-    // $('.box-icons-space .box-icon').on('click', function(){
-    //     function random(max){
-    //         return Math.random() * (max - 0) + 0;
-    //     }
-    //     var c = document.createDocumentFragment();
-    //     for (var i=0; i<100; i++) {
-    //         var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);\
-    //               background: hsla('+random(360)+',100%,50%,1);\
-    //               animation: bang 700ms ease-out forwards;\
-    //               opacity: 0';
-    //
-    //         var e = document.createElement("i");
-    //         e.style.cssText = styles.toString();
-    //         c.appendChild(e);
-    //     }
-    //     // document.body.appendChild(c);
-    //     $(this).append(c);
-    // });
 
     $(".js-btn").on("click", function (event) {
         let divBoxIn = event.currentTarget;
@@ -248,6 +237,7 @@ $(document).ready(function() {
     }
 
     // List sounds
+
     $(".icon-speakers").click(function() {
         $(this).parent().toggleClass("open");
     });

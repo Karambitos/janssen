@@ -6,15 +6,10 @@ body.page-has-icons {
             padding: 0;
         }
     }
-    .box-info {
-        .btn {
-            position: absolute;
-        }
-    }
 }
 
 .block-tales {
-    padding-bottom: 70px;
+    padding-bottom: 80px;
 
     .row {
         margin: -22px -18px;
@@ -40,13 +35,64 @@ body.page-has-icons {
     height: 100%;
     position: relative;
 
+    &.box-tale-wide {
+        .box-info {
+            background-image: url("../img/bg-box-tale-wide.png");
+            padding-top: 110px;
+
+            @include breakpoint(md) {
+                background-image: url("../img/bg-box-tale.png");
+                padding-top: 100px;
+            }
+
+            @include breakpoint(xs) {
+                background-image: url("../img/bg-box-tale-mobile.png");
+            }
+        }
+
+        h3 {
+            max-width: 400px;
+
+            @include breakpoint(md) {
+                max-width: 80%;
+            }
+
+            @include breakpoint(xs) {
+                max-width: 90%;
+            }
+        }
+
+        p {
+            max-width: 80%;
+
+            @include breakpoint(xl) {
+                max-width: 90%;
+            }
+
+            @include breakpoint(md) {
+                max-width: 100%;
+            }
+        }
+
+        .btn {
+            max-width: 415px;
+        }
+    }
+
     .box-img {
+        height: 250px;
         border-radius: 15px 15px 0 0;
         overflow: hidden;
+
+        @include breakpoint(xs) {
+            height: 200px;
+        }
 
         img {
             display: block;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
@@ -56,12 +102,18 @@ body.page-has-icons {
         background-size: 100% 100%;
         border-radius: 0 0 15px 15px;
         padding: 100px 25px 110px 35px;
-        margin-top: -200px;
+        margin-top: -145px;
         position: relative;
         z-index: 1;
 
         @include breakpoint(xl) {
             padding: 100px 25px 90px;
+        }
+
+        @include breakpoint(xs) {
+            background-image: url("../img/bg-box-tale-mobile.png");
+            margin-top: -125px;
+            padding: 100px 15px 90px;
         }
     }
 
@@ -116,9 +168,9 @@ body.page-has-icons {
         }
 
         @include breakpoint(xs) {
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            bottom: 25px;
         }
 
         .btn-text{
@@ -137,6 +189,7 @@ body.page-has-icons {
         &-inactive {
             background: $green-dark;
             border: 1px solid $white;
+            pointer-events: none;
 
             &:hover {
                 box-shadow: none;
@@ -152,6 +205,7 @@ body.page-has-icons {
                 padding-right: 20px;
 
                 @include breakpoint(xl) {
+                    font-size: 20px;
                     padding-right: 15px;
                 }
 
@@ -180,6 +234,10 @@ body.page-has-icons {
         }
     }
 
+    .mejs__audio {
+        width: 100% !important;
+    }
+
     .mejs__mediaelement,
     .mejs__controls:not([style*="display: none"]) {
         background: $green;
@@ -199,6 +257,10 @@ body.page-has-icons {
         padding-top: 0;
         margin-left: 28px;
         margin-right: 0;
+
+        @include breakpoint(xl) {
+            margin-left: 10px;
+        }
     }
 
     .mejs__time-buffering,
@@ -233,6 +295,11 @@ body.page-has-icons {
         position: relative;
         overflow: inherit;
 
+        @include breakpoint(xl) {
+            margin: 10px 2px;
+            transform: scale(0.7);
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -252,5 +319,125 @@ body.page-has-icons {
 
     .mejs__replay>button {
         background-position: -160px -1px;
+    }
+}
+
+.block-popup-video {
+    padding: 100px 45px 60px;
+    position: relative;
+
+    @include breakpoint(xs) {
+        padding: 100px 15px 60px;
+        margin: 0 -15px 60px;
+    }
+
+    &:before {
+        content: '';
+        background: $blue-dark url("../img/bg.png") repeat center center;
+        border-radius: 15px;
+        transform: skewY(-3deg);
+        position: absolute;
+        left: 0;
+        top: 30px;
+        right: 0;
+        bottom: 30px;
+        z-index: -1;
+    }
+
+    h2 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 80px;
+
+        @include breakpoint(xl) {
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 24px;
+        }
+    }
+
+    .block-popup-close {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 35px;
+        right: 35px;
+
+        @include breakpoint(xl) {
+            top: 45px;
+        }
+
+        @include breakpoint(xs) {
+            top: 40px;
+            right: 20px;
+        }
+
+        &:before {
+            content: '\e901';
+            font-family: 'icomoon';
+            font-size: 40px;
+            transform: none;
+            width: auto;
+            height: auto;
+            background: transparent;
+            position: static;
+
+            @include breakpoint(xl) {
+                font-size: 30px;
+            }
+
+            @include breakpoint(xs) {
+                font-size: 25px;
+            }
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+    
+    .block-video-player {
+        max-width: 950px;
+        margin: 0 auto;
+
+        &:before {
+            width: 90%;
+            left: 4.765%;
+
+            @include breakpoint(xs) {
+                width: auto;
+                left: -30px;
+            }
+        }
+    }
+
+    .box-video-player {
+        .play-video-player {
+            font-size: 55px;
+
+            @include breakpoint(xl) {
+                font-size: 50px;
+            }
+
+            @include breakpoint(xs) {
+                font-size: 45px;
+            }
+        }
+    }
+
+    .info-video-player {
+        margin: 13px 0 0 15.265%;
+
+        @include breakpoint(xl) {
+            margin: 10px 0 0 17.265%;
+        }
+
+        @include breakpoint(xs) {
+            margin: 15px auto 0;
+        }
     }
 }

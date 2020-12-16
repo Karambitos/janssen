@@ -11,14 +11,9 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/app.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css"/>
 </head>
 
-<style>
-
-</style>
-
-<body class="page-horbar page-has-icons">
+<body class="page-has-icons">
 <header class="header">
     <a class="logo" href="/">
         <img src="img/e2e_Janssen_JAT21-Logo.svg" alt="e2e Janssen JAT21 Logo">
@@ -62,29 +57,29 @@
         <p>Sascha nimmt Euch mit auf eine Tour auf der #JAT21 Plattform und zeigt Euch, was Ihr hier erleben könnt.</p>
     </div>
     <div class="block-tales block-space">
-        <div class="container">
-            <div class="block-icons-space">
-                <div class="box-icons-space">
-                    <div data-image="heart" class="box-in js-btn">
-                        <div class="box-num">0</div>
-                        <div class="box-icon">
-                            <img src="img/icon/heart.svg" alt="" />
-                        </div>
+        <div class="block-icons-space">
+            <div class="box-icons-space">
+                <div data-image="heart" class="box-in js-btn">
+                    <div class="box-num">0</div>
+                    <div class="box-icon">
+                        <img src="img/icon/heart.svg" alt="" />
                     </div>
-                    <div data-image="ja" class="box-in js-btn">
-                        <div class="box-num">0</div>
-                        <div class="box-icon">
-                            <img src="img/icon/ja.svg" alt="" />
-                        </div>
+                </div>
+                <div data-image="ja" class="box-in js-btn">
+                    <div class="box-num">0</div>
+                    <div class="box-icon">
+                        <img src="img/icon/ja.svg" alt="" />
                     </div>
-                    <div data-image="confetti" class="box-in js-btn">
-                        <div class="box-num">0</div>
-                        <div class="box-icon">
-                            <img src="img/icon/confetti.svg" alt="" />
-                        </div>
+                </div>
+                <div data-image="confetti" class="box-in js-btn">
+                    <div class="box-num">0</div>
+                    <div class="box-icon">
+                        <img src="img/icon/confetti.svg" alt="" />
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="box-tale">
@@ -94,13 +89,62 @@
                         <div class="box-info">
                             <h3>Achtsamkeit (Keynote) "Working in the zone"</h3>
                             <p>Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.Hier steht eine kurze Beschreibung. Short descr. Nemo enim ipsam voluptatem quia.</p>
-                            <a class="btn" href="#">
+                            <a class="btn btn-popup" href="#">
                                 <div class="btn-in">
                                     <i class="icon-play-small"></i>
                                     Video ansehen
                                 </div>
                                 <i class="icon-arrow-right"></i>
                             </a>
+                        </div>
+                    </div>
+                    <div class="block-popup" style="display: none;">
+                        <div class="block-popup-wrap">
+                            <div class="block-popup-wrap-in">
+                                <div class="block-popup-video">
+                                    <div class="block-popup-close"></div>
+                                    <h2>Kanban<br> (analog & digital)</h2>
+                                    <div class="block-video-player">
+                                        <div class="wrap-video-player">
+                                            <img class="bg-video-player" src="img/bg-video-player.png" alt="">
+                                            <img class="bg-video-player-tablet" src="img/bg-video-player-tablet.png" alt="">
+                                            <img class="bg-video-player-mobile" src="img/bg-video-player-mobile.png" alt="">
+                                            <div class="box-video-player">
+                                                <a class="play-video-player" href="#"><i class="icon-play"></i></a>
+                                                <img src="img/img-video-player.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="info-video-player">
+                                            <div class="block-qr-code">
+                                                <div class="box-qr-code">
+                                                    <img src="img/img-qr-code.png" alt="">
+                                                </div>
+                                                <div class="box-qr-code-info">
+                                                    <h4>QR/ link zu XYZ</h4>
+                                                    <p>www.info.de/mein-link ist hier</p>
+                                                </div>
+                                            </div>
+                                            <div class="block-clap">
+                                                <button class="box-clap">
+                                                    <i class="icon-clap"></i>
+                                                </button>
+                                                <div class="box-clap-info">
+                                                    <div class="box-speakers">
+                                                        <i class="icon-speakers"></i>
+                                                        <ul class="list-speakers">
+                                                            <li data-id="1">Sound-1</li>
+                                                            <li data-id="2">Sound-2</li>
+                                                            <li data-id="3" class="active">Sound-3 very long</li>
+                                                        </ul>
+                                                        <audio class="musicPlayer" preload="none" src="./sound/clap.mp3"></audio>
+                                                    </div>
+                                                    <div class="box-speakers-counter">54</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,9 +222,5 @@
     <div class="footer-text"><a href="#" target="_blank">Technischer Support</a> <span class="copy">&copy; 2021</span></div>
 </footer>
 <script src="assets/app.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
-<script>
-  $('audio').mediaelementplayer();
-</script>
 </body>
 </html>
